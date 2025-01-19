@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex; /* Usando Flexbox para dispor os elementos lado a lado */
+    justify-content: space-between; /* Espaço entre os dois elementos */
+    align-items: center; /* Alinha verticalmente os itens no centro */
+    background-color: #2600ff;
+    height: 10vh;
+}
+
+.csv_bar {
+    /* flex: 1; Faz a div csv_bar ocupar todo o espaço disponível */
+    background-color: #bbff00; /* Cor de fundo para diferenciação */
+    height: 10vh;
+    width: 50vw;
+}
+
+.logo {
+    /* flex: 0; A div logo não vai ocupar mais espaço que o necessário */
+    background-color: #00ff40; /* Cor de fundo para diferenciação */
+    height: 10vh;
+    width: 50vw;
+}
+
+.espaco {
+    height: 5vh;
+    background-color: #ff0000;
+}
+
+.graficos {
+    height: 85vh;
+    background-color: #00ff40;
+    display: grid; /* Define que será um grid */
+    grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas com o mesmo tamanho */
+    grid-template-rows: repeat(2, 1fr); /* Cria 2 linhas com o mesmo tamanho */
+    gap: 10px; /* Espaçamento entre as divs */
+}
+
+.grafico_1, .grafico_2, .grafico_3, .grafico_4 {
+    height: 100%; /* Garante que cada div ocupe o espaço disponível */
+    box-sizing: border-box; /* Garante que o padding não ultrapasse as dimensões da div */
+}
+.grafico_1{
+    background-color: #e100ff; /* Cor de fundo para as divs individuais (opcional) */
+}
+.grafico_2 {
+    background-color: #00a2ff; /* Cor de fundo para as divs individuais (opcional) */
+}
+.grafico_3 {
+    background-color: #e5ff00; /* Cor de fundo para as divs individuais (opcional) */
+}
+.grafico_4 {
+    background-color: #6b0000; /* Cor de fundo para as divs individuais (opcional) */
+}

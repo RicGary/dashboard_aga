@@ -1,0 +1,28 @@
+/* assets/style.css */
+
+/* Importa a fonte Inter do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* Aplica a fonte Inter a todo o corpo do site */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Personalização adicional para garantir a legibilidade */
+html {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Estilizando o texto na logo */
+.navbar .logo {
+    display: flex;            /* Usa flexbox para alinhar o conteúdo */
+    justify-content: flex-end; /* Alinha o conteúdo (texto) à direita */
+    align-items: center;      /* Centraliza verticalmente o conteúdo, se necessário */
+    padding-right: 20px;      /* Adiciona um espaço de 20px à direita do texto */
+}
+
+.navbar .logo h1 {
+    font-weight: 700;  /* Define a fonte em negrito para o título */
+    margin: 0;         /* Remove a margem padrão */
+}
