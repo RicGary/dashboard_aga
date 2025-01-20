@@ -2,10 +2,7 @@ import pandas as pd
 import plotly.graph_objects as go
 
 
-def gerar_grafico_todos_sensores_tempo_30min():
-    # Carregar os dados do CSV
-    df = pd.read_csv("dados_mock.csv", sep=";")
-    
+def gerar_grafico_todos_sensores_tempo_30min(df):
     # Verificar se o arquivo foi carregado corretamente
     if df.empty:
         print("Erro: O arquivo CSV está vazio ou não foi encontrado.")
@@ -32,12 +29,16 @@ def gerar_grafico_todos_sensores_tempo_30min():
             )
         )
 
+    # Criar uma lista de ticks de 2 em 2 horas
+    horarios_2h = [hora for hora in horarios_30min if int(hora.split(':')[0]) % 2 == 0 and "30" not in hora]
+    print(horarios_2h)
+
     # Configurar o layout
     fig.update_layout(
         title="Luminosidade por Sensor ao Longo do Tempo (30 em 30 minutos)",
         xaxis=dict(
-            tickangle=45,
-            tickvals=horarios_30min,  # Definindo os horários de 30 em 30 minutos
+            # tickangle=45,
+            tickvals=horarios_2h,  # Definindo os ticks de 2 em 2 horas
             showgrid=True,
             zeroline=False,
         ),

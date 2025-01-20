@@ -1,13 +1,19 @@
 import pandas as pd
 import plotly.graph_objects as go
 
-def gerar_grafico_media_tempo():
-    # Carregar os dados do CSV especificando o formato da data
-    df = pd.read_csv("dados_mock.csv", sep=";", parse_dates=["horario"], dayfirst=True)
-    
+def gerar_grafico_media_tempo(df):
     # Verificar se o arquivo foi carregado corretamente
     if df.empty:
         print("Erro: O arquivo CSV está vazio ou não foi encontrado.")
+        return None
+
+    # Converter a coluna 'horario' para datetime, caso não seja
+    if not pd.api.types.is_datetime64_any_dtype(df['horario']):
+        df['horario'] = pd.to_datetime(df['horario'], errors='coerce')
+    
+    # Verificar se houve erro na conversão (valores NaT)
+    if df['horario'].isna().any():
+        print("Erro: Alguns valores na coluna 'horario' não puderam ser convertidos para datetime.")
         return None
 
     # Arredondar os horários para o intervalo de 30 minutos mais próximo

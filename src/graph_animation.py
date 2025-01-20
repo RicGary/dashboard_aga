@@ -1,10 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
 
-def gerar_heatmap():
-    # Carregar os dados do CSV
-    df = pd.read_csv("dados_mock.csv", sep=";")
-    
+def gerar_heatmap(df): 
     # Verificar se o arquivo foi carregado corretamente
     if df.empty:
         print("Erro: O arquivo CSV está vazio ou não foi encontrado.")
