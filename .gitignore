@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Other stuff
+*.csv
+*.png
+src/mock_dados_final.py
